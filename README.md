@@ -53,6 +53,13 @@ or invites hallucinated content.
 No generator script or setup skill ships with this template (deliberately
 out of scope for the first pass) — copy-and-edit only.
 
+**Maintaining this template itself:** the three `CLAUDE.md` variants share
+an identical preamble (root-preferences pointer, the `skills-plugins-hooks`
+dependency note, the `## Git` section) by design — each tier is meant to be
+copied independently, so it can't reference a shared include. Nothing
+enforces that the three copies stay in sync: if you change the shared
+wording in one (e.g. the Git workflow rule), hand-update the other two.
+
 ## Roadmap
 
 - **Skill distribution beyond manual symlink** — today, using

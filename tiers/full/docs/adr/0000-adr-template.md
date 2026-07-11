@@ -32,5 +32,5 @@ all.]
 _This file is a **copy source**, not a record — duplicate it as
 `000N-your-slug.md` for the first real decision with alternatives worth
 recording. Never "resolve" this file itself. See
-[docs/graduating-tiers.md](../graduating-tiers.md) in the template repo for
-when an ADR is warranted at all._
+[docs/graduating-tiers.md](../../../../docs/graduating-tiers.md) in the
+template repo for when an ADR is warranted at all._
