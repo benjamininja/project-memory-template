@@ -67,12 +67,15 @@ wording in one (e.g. the Git workflow rule), hand-update the other two.
   README's symlink command. A more portable distribution mechanism
   (bootstrap script, per-repo skill-link manifest) is future work — see the
   matching item in `skills-plugins-hooks/README.md`.
-- **Check-in hygiene hook** — a future hook that scans a project's memory
-  scaffold at commit time, flags empty/stale files (unfilled
-  `CONTEXT.md`/ADRs) and missing/stale READMEs, and either offers to
-  delete the unused ones or prompts for completion. Complements, but
-  doesn't replace, the per-file graduation triggers above — it can only
-  catch problems at commit time, not mid-session. Not built yet.
+- ~~**Check-in hygiene hook**~~ — done, see
+  [`hooks/check-in-hygiene/`](hooks/check-in-hygiene/): a `pre-commit`
+  hook blocking commits that leave a copied template placeholder unfilled
+  or introduce a dangling `CLAUDE.md`/`README.md` reference. Scoped to
+  what the current commit touches, not a full-repo scan — complements, but
+  doesn't replace, the per-file graduation triggers above (it can only
+  catch problems at commit time, not mid-session). Git-recency-based
+  staleness detection and an interactive delete-offer were both considered
+  and deliberately deferred — see the hook's own README.
 - **Skill-stage/domain routing map** — which vendored skills pair with
   which process stage (Plan / Crystallize / Execute) or domain (e.g.
   `microsoft-docs` for anything Microsoft-related), so a session knows
