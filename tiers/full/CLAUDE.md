@@ -21,6 +21,10 @@ Two memory stores, different scopes:
   - [CONTEXT.md](CONTEXT.md) — domain glossary (canonical terms)
   - [docs/adr/](docs/adr/) — decisions with real alternatives considered
     and rejected
+
+See [docs/regression-testing-standard.md](../../docs/regression-testing-standard.md)
+in the template repo before adding tests to a project with real data
+pipelines or multiple runtime surfaces.
 - **`C:\Users\benha\.claude\memory\` (global, cross-project)**:
   - `preferences.md` — working style, cross-project conventions
   - `MEMORY.md` — index across all projects

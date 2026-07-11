@@ -62,6 +62,14 @@ wording in one (e.g. the Git workflow rule), hand-update the other two.
 
 ## Roadmap
 
+- ~~**Regression-testing standard**~~ — done, see
+  [`docs/regression-testing-standard.md`](docs/regression-testing-standard.md):
+  a complexity-scaled pattern (extract-and-unit-test pure functions,
+  headless-execution smoke tests via the standard runner, manifest/schema
+  validation scripts, `pre-commit` as the language-agnostic orchestrator)
+  synthesized from `Python-PowerBI-DynastyFantasyFootball`'s retrofit. CI
+  and visual regression are logged as deliberately deferred in the doc's
+  own Roadmap section, not built here.
 - **Skill distribution beyond manual symlink** — today, using
   `skills-plugins-hooks`' skills in a new repo means manually running its
   README's symlink command. A more portable distribution mechanism
