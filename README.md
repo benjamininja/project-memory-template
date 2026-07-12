@@ -6,7 +6,7 @@ much a project actually needs, not applied uniformly.
 
 Synthesized from `Python-PowerBI-DynastyFantasyFootball`'s real memory
 architecture (built organically over months, growing a piece at a time as
-each need showed up) and validated against `skills-plugins-hooks`'
+each need showed up) and validated against `skills-plugins-hooks-agents`'
 vendored engineering flow (`grill-with-docs`/`domain-modeling`, which
 generate `CONTEXT.md`/ADR content live rather than pre-scaffolding it
 blank) and ponytail's YAGNI ladder (introduce complexity only as it's
@@ -15,7 +15,7 @@ earned).
 ## Dependency
 
 This template assumes the central skills library,
-[`skills-plugins-hooks`](https://github.com/benjamininja/skills-plugins-hooks)
+[`skills-plugins-hooks-agents`](https://github.com/benjamininja/skills-plugins-hooks-agents)
 (`ask-matt`, `grill-with-docs`, `domain-modeling`, `tdd`, etc.), is
 installed — see that repo's README for the symlink-installation steps.
 Every tier's `CLAUDE.md` names this dependency explicitly so a new repo
@@ -54,7 +54,7 @@ No generator script or setup skill ships with this template (deliberately
 out of scope for the first pass) — copy-and-edit only.
 
 **Maintaining this template itself:** the three `CLAUDE.md` variants share
-an identical preamble (root-preferences pointer, the `skills-plugins-hooks`
+an identical preamble (root-preferences pointer, the `skills-plugins-hooks-agents`
 dependency note, the `## Git` section) by design — each tier is meant to be
 copied independently, so it can't reference a shared include. Nothing
 enforces that the three copies stay in sync: if you change the shared
@@ -71,10 +71,10 @@ wording in one (e.g. the Git workflow rule), hand-update the other two.
   and visual regression are logged as deliberately deferred in the doc's
   own Roadmap section, not built here.
 - **Skill distribution beyond manual symlink** — today, using
-  `skills-plugins-hooks`' skills in a new repo means manually running its
+  `skills-plugins-hooks-agents`' skills in a new repo means manually running its
   README's symlink command. A more portable distribution mechanism
   (bootstrap script, per-repo skill-link manifest) is future work — see the
-  matching item in `skills-plugins-hooks/README.md`.
+  matching item in `skills-plugins-hooks-agents/README.md`.
 - ~~**Check-in hygiene hook**~~ — done, see
   [`hooks/check-in-hygiene/`](hooks/check-in-hygiene/): a `pre-commit`
   hook blocking commits that leave a copied template placeholder unfilled
@@ -88,7 +88,7 @@ wording in one (e.g. the Git workflow rule), hand-update the other two.
   which process stage (Plan / Crystallize / Execute) or domain (e.g.
   `microsoft-docs` for anything Microsoft-related), so a session knows
   what to reach for without re-deriving it. This is a catalog concern owned
-  by `skills-plugins-hooks`, not this template — this repo's `CLAUDE.md`
+  by `skills-plugins-hooks-agents`, not this template — this repo's `CLAUDE.md`
   can reference the map once it exists there.
 - **Setup skill** — a `setup-project-memory`-style skill that interviews
   the user and generates the initial `CLAUDE.md`/`PLAN.md`/`CONTEXT.md` for
