@@ -55,7 +55,7 @@ single high-stakes infrastructure choice can warrant an ADR in an otherwise
 ## Why not just always ship `full`?
 
 Empty scaffolding rots. Pocock's `grill-with-docs`/`domain-modeling` skills
-(vendored in `skills-plugins-hooks`) never pre-create a blank `CONTEXT.md`
+(vendored in `skills-plugins-hooks-agents`) never pre-create a blank `CONTEXT.md`
 or ADR — they generate the file live, at the moment a real term or decision
 exists. A `CLAUDE.md` that points at an empty `CONTEXT.md` wastes a turn (or
 invites hallucinated content) every session until someone fills it in.
