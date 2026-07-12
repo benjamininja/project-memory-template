@@ -25,6 +25,10 @@ link) will false-negative on a placeholder someone accidentally wrapped in
 link syntax. Good enough for a first pass; tighten if it bites in practice.
 Markdown task-list checkboxes (`[ ]`/`[x]`/`[X]`) are excluded explicitly —
 bit on the very first real commit against a PLAN.md using them.
+Brackets directly preceded by a word character or backtick are excluded
+too — DAX column/measure references (`Dim_Contract[CapHitPct]`, inline-code
+`[CapHit]`) bit on the first Dynasty PLAN.md commit after adoption; real
+template placeholders always follow whitespace or punctuation.
 """
 import re
 import subprocess
@@ -35,7 +39,7 @@ PLACEHOLDER_CHECK_FILES = {"CLAUDE.md", "PLAN.md", "CONTEXT.md", ".claude/memory
 ADR_TEMPLATE_NAME = "0000-adr-template.md"
 LINK_CHECK_FILES = {"CLAUDE.md", "README.md"}
 
-PLACEHOLDER_RE = re.compile(r"\[(?![ xX]\])[^\]\n]+\](?!\()")
+PLACEHOLDER_RE = re.compile(r"(?<![\w`\]])\[(?![ xX]\])[^\]\n]+\](?!\()")
 MARKDOWN_LINK_RE = re.compile(r"\[[^\]\n]+\]\(([^)]+)\)")
 
 
