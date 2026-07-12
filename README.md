@@ -88,9 +88,16 @@ wording in one (e.g. the Git workflow rule), hand-update the other two.
   which process stage (Plan / Crystallize / Execute) or domain (e.g.
   `microsoft-docs` for anything Microsoft-related), so a session knows
   what to reach for without re-deriving it. This is a catalog concern owned
-  by `skills-plugins-hooks-agents`, not this template — this repo's `CLAUDE.md`
-  can reference the map once it exists there.
-- **Setup skill** — a `setup-project-memory`-style skill that interviews
-  the user and generates the initial `CLAUDE.md`/`PLAN.md`/`CONTEXT.md` for
-  a new repo, instead of manual copy-and-edit. Deliberately deferred from
-  this pass.
+  by `skills-plugins-hooks-agents`, not this template — this repo's
+  `CLAUDE.md` can reference the map once it exists there.
+- ~~**Setup skill**~~ **Done** (2026-07-12) — `setup-project-memory`, in
+  `skills-plugins-hooks-agents/skills/`. Scope grew beyond what was
+  originally sketched here: instead of just generating
+  `CLAUDE.md`/`PLAN.md`/`CONTEXT.md`, it fully bootstraps a new project —
+  tier scaffold, `setup-matt-pocock-skills`' config, and `check-in-hygiene`
+  pre-commit wiring — in one pass. It lives in the skill-catalog repo, not
+  here, since that's the one canonical source every machine
+  junction-installs `~/.claude/skills/` from; it reads tier content from
+  this repo the same way any consumer would. See that repo's
+  [ADR-0005](https://github.com/benjamininja/skills-plugins-hooks-agents/blob/main/docs/adr/0005-skill-routing-and-drift-detection.md)
+  for the full reasoning.
