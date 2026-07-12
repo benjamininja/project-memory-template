@@ -21,10 +21,10 @@ Scoped to what THIS commit touches, not a full-repo scan — a pre-existing
 stale file you aren't editing never blocks an unrelated commit.
 
 ponytail: the placeholder heuristic (bracket text not forming a markdown
-link) will false-positive on legitimate bracket usage that isn't a link
-(e.g. literal `[x]`-style examples in prose) and false-negative on a
-placeholder someone accidentally wrapped in link syntax. Good enough for
-a first pass; tighten if either bites in practice.
+link) will false-negative on a placeholder someone accidentally wrapped in
+link syntax. Good enough for a first pass; tighten if it bites in practice.
+Markdown task-list checkboxes (`[ ]`/`[x]`/`[X]`) are excluded explicitly —
+bit on the very first real commit against a PLAN.md using them.
 """
 import re
 import subprocess
@@ -35,7 +35,7 @@ PLACEHOLDER_CHECK_FILES = {"CLAUDE.md", "PLAN.md", "CONTEXT.md", ".claude/memory
 ADR_TEMPLATE_NAME = "0000-adr-template.md"
 LINK_CHECK_FILES = {"CLAUDE.md", "README.md"}
 
-PLACEHOLDER_RE = re.compile(r"\[[^\]\n]+\](?!\()")
+PLACEHOLDER_RE = re.compile(r"\[(?![ xX]\])[^\]\n]+\](?!\()")
 MARKDOWN_LINK_RE = re.compile(r"\[[^\]\n]+\]\(([^)]+)\)")
 
 
