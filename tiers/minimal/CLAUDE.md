@@ -17,6 +17,18 @@ Project: [one-line description — what this repo does and why it exists].
 - [Rule 2]
 - [Rule 3]
 
+## Plan gate
+
+<!-- Invariant mirrored from the root ~/.claude/CLAUDE.md plan gate
+     (benjamininja/dotclaude). Threshold/escape-hatch changes update both
+     copies and all three tiers. -->
+
+Non-trivial changes — a new file, more than one file touched, any design
+decision — follow **plan → explicit confirmation → write**. Enter plan
+mode by default for work over that threshold. Only escape hatches: an
+explicit "just do it", or typo-class fixes (single line, zero design
+content).
+
 ## Git
 
 Feature branch → `main` via PR. Never commit or push directly to `main`.
