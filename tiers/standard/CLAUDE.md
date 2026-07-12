@@ -31,6 +31,14 @@ it's not obvious from the code alone.
 - [Rule 2]
 - [Rule 3]
 
+## Plan gate
+
+Non-trivial changes — a new file, more than one file touched, any design
+decision — follow **plan → explicit confirmation → write**. Enter plan
+mode by default for work over that threshold. Only escape hatches: an
+explicit "just do it", or typo-class fixes (single line, zero design
+content).
+
 ## Git
 
 Feature branch → `main` via PR. Never commit or push directly to `main`.
