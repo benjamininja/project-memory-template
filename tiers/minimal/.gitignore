@@ -1,0 +1,8 @@
+# continual-learning hook (skills-plugins-hooks-agents) auto-generates this
+# per-repo DB the first time a Claude Code session runs here — ephemeral
+# state, not curated memory like .claude/memory/.
+.claude/learnings.db
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

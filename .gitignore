@@ -1,0 +1,6 @@
+# Python build artifacts from `pip install .` (the packaging shim in
+# pyproject.toml that lets pre-commit's language: python install this repo
+# as check-in-hygiene's hook source).
+build/
+*.egg-info/
+__pycache__/

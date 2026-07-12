@@ -3,10 +3,10 @@
 A [`pre-commit`](https://pre-commit.com) framework hook that scans this
 template's memory scaffold at commit time — the "check-in hygiene hook"
 noted as future work in this repo's root README Roadmap. Unlike the two
-hooks in `skills-plugins-hooks/hooks/` (Claude-Code-native `settings.json`
+hooks in `skills-plugins-hooks-agents/hooks/` (Claude-Code-native `settings.json`
 hooks), this is a `pre-commit` hook deliberately: it needs to catch **every**
 commit regardless of tool (terminal, IDE, Claude Code), not just ones Claude
-Code itself drives — the same reasoning `skills-plugins-hooks`' ADR-0004
+Code itself drives — the same reasoning `skills-plugins-hooks-agents`' ADR-0004
 already used for CI over a Claude-Code-only gate applies here.
 
 ## What it blocks

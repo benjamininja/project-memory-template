@@ -6,7 +6,7 @@ Project: [one-line description — what this repo does and why it exists].
 > `C:\Users\benha\.claude\memory\preferences.md` before generating code.**
 
 > Skills used in this project are sourced from the central
-> `skills-plugins-hooks` repo (`benjamininja/skills-plugins-hooks`) —
+> `skills-plugins-hooks-agents` repo (`benjamininja/skills-plugins-hooks-agents`) —
 > installed per that repo's README (symlinked into `~/.claude/skills/`).
 > If a skill this project needs isn't available, check there first before
 > writing one-off logic.
@@ -21,10 +21,9 @@ Two memory stores, different scopes:
   - [CONTEXT.md](CONTEXT.md) — domain glossary (canonical terms)
   - [docs/adr/](docs/adr/) — decisions with real alternatives considered
     and rejected
-
-See [docs/regression-testing-standard.md](../../docs/regression-testing-standard.md)
-in the template repo before adding tests to a project with real data
-pipelines or multiple runtime surfaces.
+  - See [docs/regression-testing-standard.md](../../docs/regression-testing-standard.md)
+    in the template repo before adding tests to a project with real data
+    pipelines or multiple runtime surfaces
 - **`C:\Users\benha\.claude\memory\` (global, cross-project)**:
   - `preferences.md` — working style, cross-project conventions
   - `MEMORY.md` — index across all projects
