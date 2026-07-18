@@ -63,6 +63,8 @@ content).
 Feature branch → `main` via PR. Never commit or push directly to `main`.
 Commit only when asked.
 
+Before opening a PR, run `/security-review` on the diff.
+
 ---
 
 _This is the **full** tier of `project-memory-template` — the complete

@@ -4,3 +4,8 @@
 build/
 *.egg-info/
 __pycache__/
+
+# continual-learning hook's local per-repo telemetry DB — machine-local
+# state, not meant to be committed (see skills-plugins-hooks-agents'
+# hooks/continual-learning/README.md).
+.claude/learnings.db
