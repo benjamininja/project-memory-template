@@ -5,7 +5,7 @@ so the code, the docs, and anyone reading them mean the same thing.
 
 Add a term here the first time you catch yourself re-explaining it, or the
 first time a name is ambiguous without a definition — see
-[docs/graduating-tiers.md](../../docs/graduating-tiers.md) in the template
+[docs/graduating-tiers.md](https://github.com/benjamininja/project-memory-template/blob/main/docs/graduating-tiers.md) in the template
 repo.
 
 ## Language

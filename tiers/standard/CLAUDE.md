@@ -3,7 +3,7 @@
 Project: [one-line description — what this repo does and why it exists].
 
 > **Always read overarching developer preferences from
-> `C:\Users\benha\.claude\memory\preferences.md` before generating code.**
+> `~/.claude/memory/preferences.md` before generating code.**
 
 > Skills used in this project are sourced from the central
 > `skills-plugins-hooks-agents` repo (`benjamininja/skills-plugins-hooks-agents`) —
@@ -18,12 +18,12 @@ Two memory stores, different scopes:
 - **`.claude/memory/` (this repo, project-specific)**:
   - [MEMORY.md](.claude/memory/MEMORY.md) — index of project facts and state
   - [CONTEXT.md](CONTEXT.md) — domain glossary (canonical terms)
-- **`C:\Users\benha\.claude\memory\` (global, cross-project)**:
+- **`~/.claude/memory/` (global, cross-project)**:
   - `preferences.md` — working style, cross-project conventions
   - `MEMORY.md` — index across all projects
 
 Read the relevant `.claude/memory/*.md` file before touching project state
-it's not obvious from the code alone.
+that's not obvious from the code alone.
 
 ## Project-wide rules
 
@@ -59,5 +59,5 @@ identical to a clean result for the right one).
 
 _This is the **standard** tier of `project-memory-template` — no
 `docs/adr/` yet (decisions log inline in `MEMORY.md`/`PLAN.md`). See
-[docs/graduating-tiers.md](../../docs/graduating-tiers.md) in the template
+[docs/graduating-tiers.md](https://github.com/benjamininja/project-memory-template/blob/main/docs/graduating-tiers.md) in the template
 repo for when to add it._

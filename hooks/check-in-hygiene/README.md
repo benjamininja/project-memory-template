@@ -69,3 +69,18 @@ python hooks/check-in-hygiene/check_in_hygiene.py
 
 git reset docs/adr/0001-test.md && rm docs/adr/0001-test.md
 ```
+
+## Tests
+
+Regression tests live in `tests/` at the template repo root and run in CI
+(`.github/workflows/test.yml`) on every PR. Locally:
+
+```bash
+pip install -e ".[test]"
+python -m pytest -q
+```
+
+Any false positive found in a real adoption should land here as a pinned
+case alongside its fix. `test_wikilink_is_not_a_placeholder` is a strict
+`xfail` recording one known gap (`[[wikilink]]` is flagged); remove the
+marker when the regex is fixed.

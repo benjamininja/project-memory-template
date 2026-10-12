@@ -11,6 +11,13 @@ requires-python = ">=3.8"
 [project.scripts]
 check-in-hygiene = "check_in_hygiene:main"
 
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.pytest.ini_options]
+pythonpath = ["hooks/check-in-hygiene"]
+testpaths = ["tests"]
+
 [tool.setuptools]
 py-modules = ["check_in_hygiene"]
 

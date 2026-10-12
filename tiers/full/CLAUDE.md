@@ -3,7 +3,7 @@
 Project: [one-line description — what this repo does and why it exists].
 
 > **Always read overarching developer preferences from
-> `C:\Users\benha\.claude\memory\preferences.md` before generating code.**
+> `~/.claude/memory/preferences.md` before generating code.**
 
 > Skills used in this project are sourced from the central
 > `skills-plugins-hooks-agents` repo (`benjamininja/skills-plugins-hooks-agents`) —
@@ -21,10 +21,10 @@ Two memory stores, different scopes:
   - [CONTEXT.md](CONTEXT.md) — domain glossary (canonical terms)
   - [docs/adr/](docs/adr/) — decisions with real alternatives considered
     and rejected
-  - See [docs/regression-testing-standard.md](../../docs/regression-testing-standard.md)
+  - See [docs/regression-testing-standard.md](https://github.com/benjamininja/project-memory-template/blob/main/docs/regression-testing-standard.md)
     in the template repo before adding tests to a project with real data
     pipelines or multiple runtime surfaces
-- **`C:\Users\benha\.claude\memory\` (global, cross-project)**:
+- **`~/.claude/memory/` (global, cross-project)**:
   - `preferences.md` — working style, cross-project conventions
   - `MEMORY.md` — index across all projects
 
@@ -39,12 +39,10 @@ that's not obvious from the code alone.
 
 ## Execution loop
 
-Long agentic builds follow the token-gated loop: `grill/plan → (Phase 0
-consolidate) → compact → execute stage → compact → …` — compact at a
-model-relative budget (~35% on Opus). See root
-`token-gating-loop.md`. `PLAN.md` is the heartbeat, updated every seam;
-`CONTEXT.md`/`docs/adr/`/`MEMORY.md` crystallize on real signal, not every
-step.
+Long agentic builds: plan, execute in stages, and compact at a natural
+seam well before the context window fills. `PLAN.md` is the heartbeat,
+updated at every seam; `CONTEXT.md`/`docs/adr/`/`MEMORY.md` crystallize on
+real signal, not every step.
 
 ## Plan gate
 
@@ -73,5 +71,5 @@ identical to a clean result for the right one).
 ---
 
 _This is the **full** tier of `project-memory-template` — the complete
-scaffold. See [docs/graduating-tiers.md](../../docs/graduating-tiers.md) in
+scaffold. See [docs/graduating-tiers.md](https://github.com/benjamininja/project-memory-template/blob/main/docs/graduating-tiers.md) in
 the template repo for the reasoning behind each file._
