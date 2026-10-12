@@ -1,4 +1,4 @@
-# [Project] — Context
+# [Project] — Glossary
 
 Shared language for this project's domain: how the key concepts are named
 so the code, the docs, and anyone reading them mean the same thing.

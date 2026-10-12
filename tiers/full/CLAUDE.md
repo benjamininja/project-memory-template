@@ -18,7 +18,7 @@ Two memory stores, different scopes:
 - **`.claude/memory/` (this repo, project-specific)**:
   - [MEMORY.md](.claude/memory/MEMORY.md) — index of project facts, state,
     and ADR pointers
-  - [CONTEXT.md](CONTEXT.md) — domain glossary (canonical terms)
+  - [GLOSSARY.md](GLOSSARY.md) — domain glossary (canonical terms)
   - [docs/adr/](docs/adr/) — decisions with real alternatives considered
     and rejected
   - See [docs/regression-testing-standard.md](https://github.com/benjamininja/project-memory-template/blob/main/docs/regression-testing-standard.md)
@@ -41,32 +41,8 @@ that's not obvious from the code alone.
 
 Long agentic builds: plan, execute in stages, and compact at a natural
 seam well before the context window fills. `PLAN.md` is the heartbeat,
-updated at every seam; `CONTEXT.md`/`docs/adr/`/`MEMORY.md` crystallize on
+updated at every seam; `GLOSSARY.md`/`docs/adr/`/`MEMORY.md` crystallize on
 real signal, not every step.
-
-## Plan gate
-
-<!-- Invariant mirrored from the root ~/.claude/CLAUDE.md plan gate
-     (benjamininja/dotclaude). Threshold/escape-hatch changes update both
-     copies and all three tiers. -->
-
-Non-trivial changes — a new file, more than one file touched, any design
-decision — follow **plan → explicit confirmation → write**. Enter plan
-mode by default for work over that threshold. Only escape hatches: an
-explicit "just do it", or typo-class fixes (single line, zero design
-content).
-
-## Git
-
-Feature branch → `main` via PR. Never commit or push directly to `main`.
-Commit only when asked.
-
-Before opening a PR, run `/security-review` on the diff. It only reviews
-the repo the current session is rooted in — for cross-repo work, run it
-from a session actually rooted in the target repo, not from here. Before
-trusting a "no findings" result, confirm the reported diff actually
-reflects the intended changes (a clean result for the wrong repo looks
-identical to a clean result for the right one).
 
 ---
 

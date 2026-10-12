@@ -1,14 +1,14 @@
 # project-memory-template
 
 A reusable, complexity-scaled project-memory scaffold — `CLAUDE.md` +
-`PLAN.md` + `.claude/memory/` + `CONTEXT.md` + `docs/adr/`, sized to how
+`PLAN.md` + `.claude/memory/` + `GLOSSARY.md` + `docs/adr/`, sized to how
 much a project actually needs, not applied uniformly.
 
 Synthesized from `Python-PowerBI-DynastyFantasyFootball`'s real memory
 architecture (built organically over months, growing a piece at a time as
 each need showed up) and validated against `skills-plugins-hooks-agents`'
 vendored engineering flow (`grill-with-docs`/`domain-modeling`, which
-generate `CONTEXT.md`/ADR content live rather than pre-scaffolding it
+generate `GLOSSARY.md`/ADR content live rather than pre-scaffolding it
 blank) and ponytail's YAGNI ladder (introduce complexity only as it's
 earned).
 
@@ -22,6 +22,12 @@ Every tier's `CLAUDE.md` names this dependency explicitly so a new repo
 built from this template doesn't silently assume skills exist without
 saying where they come from.
 
+It also assumes the owner's root `~/.claude` (`CLAUDE.md` +
+`memory/preferences.md`), which every tier's `CLAUDE.md` points at. The
+plan gate and the git workflow rules live there, not in the tiers. If you
+use this template without that root, add your own versions of those rules
+to the copied `CLAUDE.md`.
+
 ## The three tiers
 
 See [`tiers/`](tiers/) for the actual files, and
@@ -32,7 +38,7 @@ ladder.
 - **`tiers/minimal/`** — `CLAUDE.md` + `PLAN.md`. A small script or
   short-lived tool with no real data model or terminology to track.
 - **`tiers/standard/`** — adds `.claude/memory/MEMORY.md` (project state
-  index) + `CONTEXT.md` (domain glossary). Ongoing state worth remembering,
+  index) + `GLOSSARY.md` (domain glossary). Ongoing state worth remembering,
   but not yet enough decision-density for formal ADRs.
 - **`tiers/full/`** — adds `docs/adr/` (numbered decision records) + the
   token-gating execution-loop section in `CLAUDE.md`. Real architectural
@@ -44,7 +50,7 @@ Copy the contents of the tier that fits your project into its repo root,
 fill in the bracketed placeholders, and delete this note. Start at
 `minimal` by default — every project gets `CLAUDE.md`+`PLAN.md` from day
 one, since those are living working files with no rot risk. Add
-`CONTEXT.md`, `.claude/memory/`, or `docs/adr/` individually, the moment
+`GLOSSARY.md`, `.claude/memory/`, or `docs/adr/` individually, the moment
 their specific trigger in `docs/graduating-tiers.md` fires — don't
 pre-copy a whole tier bundle "to be safe." An unfilled scaffold file is
 worse than no file: it wastes a turn every session it's opened for nothing,
@@ -55,10 +61,10 @@ out of scope for the first pass) — copy-and-edit only.
 
 **Maintaining this template itself:** the three `CLAUDE.md` variants share
 an identical preamble (root-preferences pointer, the `skills-plugins-hooks-agents`
-dependency note, the `## Git` section) by design — each tier is meant to be
-copied independently, so it can't reference a shared include. Nothing
-enforces that the three copies stay in sync: if you change the shared
-wording in one (e.g. the Git workflow rule), hand-update the other two.
+dependency note) by design — each tier is meant to be copied independently,
+so it can't reference a shared include. Nothing enforces that the three
+copies stay in sync: if you change the shared wording in one, hand-update
+the other two.
 
 ## Roadmap
 
@@ -93,7 +99,7 @@ wording in one (e.g. the Git workflow rule), hand-update the other two.
 - ~~**Setup skill**~~ **Done** (2026-07-12) — `setup-project-memory`, in
   `skills-plugins-hooks-agents/skills/`. Scope grew beyond what was
   originally sketched here: instead of just generating
-  `CLAUDE.md`/`PLAN.md`/`CONTEXT.md`, it fully bootstraps a new project —
+  `CLAUDE.md`/`PLAN.md`/`GLOSSARY.md`, it fully bootstraps a new project —
   tier scaffold, `setup-matt-pocock-skills`' config, and `check-in-hygiene`
   pre-commit wiring — in one pass. It lives in the skill-catalog repo, not
   here, since that's the one canonical source every machine

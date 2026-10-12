@@ -29,17 +29,20 @@ Brackets directly preceded by a word character or backtick are excluded
 too — DAX column/measure references (`Dim_Contract[CapHitPct]`, inline-code
 `[CapHit]`) bit on the first Dynasty PLAN.md commit after adoption; real
 template placeholders always follow whitespace or punctuation.
+Double-bracket wikilinks (`[[memory-architecture]]`) are excluded as well —
+memory files link to each other that way, and neither bracket pair is a
+placeholder.
 """
 import re
 import subprocess
 import sys
 from pathlib import Path
 
-PLACEHOLDER_CHECK_FILES = {"CLAUDE.md", "PLAN.md", "CONTEXT.md", ".claude/memory/MEMORY.md"}
+PLACEHOLDER_CHECK_FILES = {"CLAUDE.md", "PLAN.md", "GLOSSARY.md", ".claude/memory/MEMORY.md"}
 ADR_TEMPLATE_NAME = "0000-adr-template.md"
 LINK_CHECK_FILES = {"CLAUDE.md", "README.md"}
 
-PLACEHOLDER_RE = re.compile(r"(?<![\w`\]])\[(?![ xX]\])[^\]\n]+\](?!\()")
+PLACEHOLDER_RE = re.compile(r"(?<![\w`\]\[])\[(?![ xX]\])[^\[\]\n]+\](?![(\]])")
 MARKDOWN_LINK_RE = re.compile(r"\[[^\]\n]+\]\(([^)]+)\)")
 
 
@@ -52,7 +55,7 @@ def repo_root() -> Path:
 
 
 def staged_changes() -> dict:
-    """Return {path: status_letter} for staged files, e.g. {'CONTEXT.md': 'D'}."""
+    """Return {path: status_letter} for staged files, e.g. {'GLOSSARY.md': 'D'}."""
     out = subprocess.run(
         ["git", "diff", "--cached", "--name-status"],
         capture_output=True, text=True, check=True,

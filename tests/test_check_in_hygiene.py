@@ -38,18 +38,11 @@ def test_placeholder_regex_flags_unfilled_template_text(text):
     "Dim_Contract[CapHitPct]",  # DAX column reference, PR #10
     "use `[CapHit]` here",      # inline-code DAX measure, PR #10
     "see [the docs](docs/a.md)",  # markdown link
+    "see [[memory-architecture]]",  # wikilink between memory files
     "no brackets at all",
 ])
 def test_placeholder_regex_ignores_legitimate_brackets(text):
     assert not hyg.PLACEHOLDER_RE.search(text)
-
-
-@pytest.mark.xfail(
-    strict=True,
-    reason="known gap: [[wikilink]] is flagged as a placeholder; remove xfail once fixed",
-)
-def test_wikilink_is_not_a_placeholder():
-    assert not hyg.PLACEHOLDER_RE.search("see [[memory-architecture]]")
 
 
 @pytest.mark.parametrize("path,expected", [
@@ -95,6 +88,12 @@ def test_unfilled_placeholder_blocks_commit(repo, capsys):
     stage(repo, "CLAUDE.md", "Project: [one-line description].\n")
     assert hyg.main() == 1
     assert "unfilled placeholder" in capsys.readouterr().err
+
+
+def test_unfilled_glossary_term_blocks_commit(repo, capsys):
+    stage(repo, "GLOSSARY.md", "## Language\n\n**[Term]**:\n[Definition]\n")
+    assert hyg.main() == 1
+    assert "GLOSSARY.md: unfilled placeholder" in capsys.readouterr().err
 
 
 def test_adr_template_is_exempt(repo):

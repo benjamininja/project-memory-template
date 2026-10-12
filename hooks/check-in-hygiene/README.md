@@ -12,14 +12,14 @@ already used for CI over a Claude-Code-only gate applies here.
 ## What it blocks
 
 1. **Unfilled placeholders** — a staged (added/modified) `CLAUDE.md`,
-   `PLAN.md`, `CONTEXT.md`, `.claude/memory/MEMORY.md`, or `docs/adr/*.md`
+   `PLAN.md`, `GLOSSARY.md`, `.claude/memory/MEMORY.md`, or `docs/adr/*.md`
    (except `0000-adr-template.md` itself, the copy source) that still
    contains bracket-style template text (`[Term]`, `[date]`, etc.) not
    forming a markdown link.
 2. **Dangling references** — `CLAUDE.md` or `README.md` linking
    (`[text](path)`) to a relative path that doesn't exist on disk. Checked
    whenever those two files change, **or** whenever a scaffold file is
-   deleted/renamed in the same commit — so deleting `CONTEXT.md` without
+   deleted/renamed in the same commit — so deleting `GLOSSARY.md` without
    touching `CLAUDE.md` still gets caught, since `CLAUDE.md`'s reference to
    it just went stale.
 
@@ -81,6 +81,4 @@ python -m pytest -q
 ```
 
 Any false positive found in a real adoption should land here as a pinned
-case alongside its fix. `test_wikilink_is_not_a_placeholder` is a strict
-`xfail` recording one known gap (`[[wikilink]]` is flagged); remove the
-marker when the regex is fixed.
+case alongside its fix.
