@@ -18,7 +18,7 @@ Two memory stores, different scopes:
 - **`.claude/memory/` (this repo, project-specific)**:
   - [MEMORY.md](.claude/memory/MEMORY.md) — index of project facts, state,
     and ADR pointers
-  - [CONTEXT.md](CONTEXT.md) — domain glossary (canonical terms)
+  - [GLOSSARY.md](GLOSSARY.md) — domain glossary (canonical terms)
   - [docs/adr/](docs/adr/) — decisions with real alternatives considered
     and rejected
   - See [docs/regression-testing-standard.md](https://github.com/benjamininja/project-memory-template/blob/main/docs/regression-testing-standard.md)
@@ -41,7 +41,7 @@ that's not obvious from the code alone.
 
 Long agentic builds: plan, execute in stages, and compact at a natural
 seam well before the context window fills. `PLAN.md` is the heartbeat,
-updated at every seam; `CONTEXT.md`/`docs/adr/`/`MEMORY.md` crystallize on
+updated at every seam; `GLOSSARY.md`/`docs/adr/`/`MEMORY.md` crystallize on
 real signal, not every step.
 
 ## Plan gate

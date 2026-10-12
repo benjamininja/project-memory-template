@@ -2,10 +2,10 @@
   name: check-in hygiene (project-memory-template scaffold)
   description: >-
     Blocks a commit that leaves a copied template placeholder unfilled
-    (CLAUDE.md/PLAN.md/CONTEXT.md/.claude/memory/MEMORY.md/docs/adr/*.md),
+    (CLAUDE.md/PLAN.md/GLOSSARY.md/.claude/memory/MEMORY.md/docs/adr/*.md),
     or that introduces a dangling reference from CLAUDE.md/README.md to a
     scaffold file that no longer exists.
   entry: check-in-hygiene
   language: python
   pass_filenames: false
-  files: '(^|/)(CLAUDE\.md|README\.md|PLAN\.md|CONTEXT\.md|docs/adr/.*\.md|\.claude/memory/MEMORY\.md)$'
+  files: '(^|/)(CLAUDE\.md|README\.md|PLAN\.md|GLOSSARY\.md|docs/adr/.*\.md|\.claude/memory/MEMORY\.md)$'

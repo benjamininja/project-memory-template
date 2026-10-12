@@ -17,7 +17,7 @@ Two memory stores, different scopes:
 
 - **`.claude/memory/` (this repo, project-specific)**:
   - [MEMORY.md](.claude/memory/MEMORY.md) — index of project facts and state
-  - [CONTEXT.md](CONTEXT.md) — domain glossary (canonical terms)
+  - [GLOSSARY.md](GLOSSARY.md) — domain glossary (canonical terms)
 - **`~/.claude/memory/` (global, cross-project)**:
   - `preferences.md` — working style, cross-project conventions
   - `MEMORY.md` — index across all projects

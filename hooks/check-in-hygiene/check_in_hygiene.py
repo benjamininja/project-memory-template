@@ -35,7 +35,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-PLACEHOLDER_CHECK_FILES = {"CLAUDE.md", "PLAN.md", "CONTEXT.md", ".claude/memory/MEMORY.md"}
+PLACEHOLDER_CHECK_FILES = {"CLAUDE.md", "PLAN.md", "GLOSSARY.md", ".claude/memory/MEMORY.md"}
 ADR_TEMPLATE_NAME = "0000-adr-template.md"
 LINK_CHECK_FILES = {"CLAUDE.md", "README.md"}
 
@@ -52,7 +52,7 @@ def repo_root() -> Path:
 
 
 def staged_changes() -> dict:
-    """Return {path: status_letter} for staged files, e.g. {'CONTEXT.md': 'D'}."""
+    """Return {path: status_letter} for staged files, e.g. {'GLOSSARY.md': 'D'}."""
     out = subprocess.run(
         ["git", "diff", "--cached", "--name-status"],
         capture_output=True, text=True, check=True,

@@ -24,7 +24,7 @@ short — once decisions need their own record with alternatives considered,
 that's the separate `docs/adr/` trigger below, not another memory-file
 split.
 
-## Add `CONTEXT.md`
+## Add `GLOSSARY.md`
 
 **Trigger:** you catch yourself re-explaining the same term or convention,
 or a name is ambiguous without a definition (does "session" mean the same
@@ -48,15 +48,15 @@ not X instead?" Not every decision — routine ones belong in `PLAN.md`'s
 Shipped section as a one-liner. An ADR is for decisions worth defending
 later.
 
-Independent of whether `.claude/memory/` or `CONTEXT.md` exist yet — a
+Independent of whether `.claude/memory/` or `GLOSSARY.md` exist yet — a
 single high-stakes infrastructure choice can warrant an ADR in an otherwise
 `minimal`-tier project.
 
 ## Why not just always ship `full`?
 
 Empty scaffolding rots. Pocock's `grill-with-docs`/`domain-modeling` skills
-(vendored in `skills-plugins-hooks-agents`) never pre-create a blank `CONTEXT.md`
+(vendored in `skills-plugins-hooks-agents`) never pre-create a blank `GLOSSARY.md`
 or ADR — they generate the file live, at the moment a real term or decision
-exists. A `CLAUDE.md` that points at an empty `CONTEXT.md` wastes a turn (or
+exists. A `CLAUDE.md` that points at an empty `GLOSSARY.md` wastes a turn (or
 invites hallucinated content) every session until someone fills it in.
 Copy only the files whose trigger has actually fired.
