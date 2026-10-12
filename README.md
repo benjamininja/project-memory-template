@@ -22,6 +22,12 @@ Every tier's `CLAUDE.md` names this dependency explicitly so a new repo
 built from this template doesn't silently assume skills exist without
 saying where they come from.
 
+It also assumes the owner's root `~/.claude` (`CLAUDE.md` +
+`memory/preferences.md`), which every tier's `CLAUDE.md` points at. The
+plan gate and the git workflow rules live there, not in the tiers. If you
+use this template without that root, add your own versions of those rules
+to the copied `CLAUDE.md`.
+
 ## The three tiers
 
 See [`tiers/`](tiers/) for the actual files, and
@@ -55,10 +61,10 @@ out of scope for the first pass) — copy-and-edit only.
 
 **Maintaining this template itself:** the three `CLAUDE.md` variants share
 an identical preamble (root-preferences pointer, the `skills-plugins-hooks-agents`
-dependency note, the `## Git` section) by design — each tier is meant to be
-copied independently, so it can't reference a shared include. Nothing
-enforces that the three copies stay in sync: if you change the shared
-wording in one (e.g. the Git workflow rule), hand-update the other two.
+dependency note) by design — each tier is meant to be copied independently,
+so it can't reference a shared include. Nothing enforces that the three
+copies stay in sync: if you change the shared wording in one, hand-update
+the other two.
 
 ## Roadmap
 

@@ -81,6 +81,4 @@ python -m pytest -q
 ```
 
 Any false positive found in a real adoption should land here as a pinned
-case alongside its fix. `test_wikilink_is_not_a_placeholder` is a strict
-`xfail` recording one known gap (`[[wikilink]]` is flagged); remove the
-marker when the regex is fixed.
+case alongside its fix.
