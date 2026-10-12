@@ -3,7 +3,7 @@
 Project: [one-line description — what this repo does and why it exists].
 
 > **Always read overarching developer preferences from
-> `C:\Users\benha\.claude\memory\preferences.md` before generating code.**
+> `~/.claude/memory/preferences.md` before generating code.**
 
 > Skills used in this project are sourced from the central
 > `skills-plugins-hooks-agents` repo (`benjamininja/skills-plugins-hooks-agents`) —
@@ -45,5 +45,5 @@ identical to a clean result for the right one).
 
 _This is the **minimal** tier of `project-memory-template` — no
 `.claude/memory/`, no `CONTEXT.md`, no `docs/adr/`. See
-[docs/graduating-tiers.md](../../docs/graduating-tiers.md) in the template
+[docs/graduating-tiers.md](https://github.com/benjamininja/project-memory-template/blob/main/docs/graduating-tiers.md) in the template
 repo for when to add them._

@@ -4,10 +4,9 @@ Scratchpad for active/upcoming work. Expected to drift — completed items
 collapse to one-liners once their durable signal lands in an ADR / MEMORY /
 CONTEXT. Blow-by-blow does NOT live here.
 
-> **Runtime token-gating**: loop is `grill/plan → (Phase 0 consolidate) →
-> compact → execute stage → compact → … ↺`. Compact at ~35% window (Opus).
-> PLAN.md = heartbeat; Memory/ADR/CONTEXT = real signal, batched into
-> Phase 0.
+> **Pacing**: plan, execute in stages, compact at a natural seam well before
+> the window fills. PLAN.md = heartbeat; Memory/ADR/CONTEXT = real signal,
+> updated when it lands.
 
 ## Working state ([date])
 - [What's true right now — current branch, what's committed vs. uncommitted]

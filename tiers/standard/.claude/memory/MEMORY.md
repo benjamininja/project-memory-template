@@ -1,7 +1,7 @@
 # Memory Index — [Project] (project)
 
 > Project-local memory. Cross-project preferences, terminology, and working
-> method live in root (`C:\Users\benha\.claude\`). Last consolidated:
+> method live in root (`~/.claude/`). Last consolidated:
 > [date].
 
 ## Active Files
